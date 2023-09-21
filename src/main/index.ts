@@ -5,10 +5,20 @@ import icon from '../../resources/icon.png?asset'
 
 function createWindow(): void {
   // Create the browser window.
+  // q:frame是干啥的?
+  // a:https://www.electronjs.org/docs/api/frameless-window
+
+
   const mainWindow = new BrowserWindow({
-    width: 900,
-    height: 670,
+    width: 330,
+    height: 90,
     show: false,
+    x: 1500,
+    y: 300,
+    frame: false,
+    transparent: true,
+    maximizable: false,
+    resizable: false,
     autoHideMenuBar: true,
     alwaysOnTop: true,
     ...(process.platform === 'linux' ? { icon } : {}),
