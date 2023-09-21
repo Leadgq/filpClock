@@ -1,13 +1,17 @@
 <script setup lang="ts">
+import { onMounted } from 'vue'
 import useMouseEvent from '@renderer/composables/useMouseEvent'
-
-const { setIgnoreMouseEvents } = useMouseEvent()
-setIgnoreMouseEvents()
+onMounted(() => {
+  const { setIgnoreMouseEvents } = useMouseEvent()
+  setIgnoreMouseEvents()
+})
 </script>
 
 <template>
   <Suspense>
-    <RouterView />
+    <RouterView v-slot="{ Component }">
+      <Component :is="Component" class="flex flex-col justify-center items-center drag" />
+    </RouterView>
   </Suspense>
 </template>
 

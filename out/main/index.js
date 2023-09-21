@@ -6,7 +6,6 @@ const icon = path.join(__dirname, "../../resources/icon.png");
 electron.ipcMain.on(
   "setIgnoreMouseEvents",
   (event, ignore, options) => {
-    console.log(111);
     const win = electron.BrowserWindow.fromWebContents(event.sender);
     win?.setIgnoreMouseEvents(ignore, options);
   }
