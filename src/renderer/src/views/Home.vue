@@ -1,11 +1,13 @@
 <template>
   <main>
-    <div id="flip-number" class="drag"></div>
+    <div id="flip-number"></div>
+    <Footer />
   </main>
 </template>
 
 <script setup lang="ts">
 import FlipClock from '../composables/FlipClock'
+import Footer from '../components/Footer.vue'
 import { onMounted } from 'vue'
 import '@renderer/assets/flipclock.scss'
 
@@ -20,5 +22,7 @@ onMounted(() => {
 </script>
 
 <style lang="scss">
-
+:root {
+  --bgColor: #000;
+}
 </style>

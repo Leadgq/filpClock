@@ -1,7 +1,11 @@
 "use strict";
 const electron = require("electron");
 const preload = require("@electron-toolkit/preload");
-const api = {};
+const api = {
+  setIgnoreMouseEvents: (ignore, options) => {
+    electron.ipcRenderer.send("setIgnoreMouseEvents", ignore, options);
+  }
+};
 if (process.contextIsolated) {
   try {
     electron.contextBridge.exposeInMainWorld("electron", preload.electronAPI);

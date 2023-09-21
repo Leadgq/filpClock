@@ -2,16 +2,13 @@ import { app, shell, BrowserWindow } from 'electron'
 import { join } from 'path'
 import { electronApp, optimizer, is } from '@electron-toolkit/utils'
 import icon from '../../resources/icon.png?asset'
+import './ipc'
 
 function createWindow(): void {
   // Create the browser window.
-  // q:frame是干啥的?
-  // a:https://www.electronjs.org/docs/api/frameless-window
-
-
   const mainWindow = new BrowserWindow({
     width: 330,
-    height: 90,
+    height: 400,
     show: false,
     x: 1500,
     y: 300,
@@ -28,6 +25,9 @@ function createWindow(): void {
     }
   })
 
+  if (is.dev) {
+    mainWindow.webContents.openDevTools()
+  }
   mainWindow.on('ready-to-show', () => {
     mainWindow.show()
   })

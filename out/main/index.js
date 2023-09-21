@@ -3,10 +3,18 @@ const electron = require("electron");
 const path = require("path");
 const utils = require("@electron-toolkit/utils");
 const icon = path.join(__dirname, "../../resources/icon.png");
+electron.ipcMain.on(
+  "setIgnoreMouseEvents",
+  (event, ignore, options) => {
+    console.log(111);
+    const win = electron.BrowserWindow.fromWebContents(event.sender);
+    win?.setIgnoreMouseEvents(ignore, options);
+  }
+);
 function createWindow() {
   const mainWindow = new electron.BrowserWindow({
     width: 330,
-    height: 90,
+    height: 400,
     show: false,
     x: 1500,
     y: 300,
@@ -22,6 +30,9 @@ function createWindow() {
       sandbox: false
     }
   });
+  if (utils.is.dev) {
+    mainWindow.webContents.openDevTools();
+  }
   mainWindow.on("ready-to-show", () => {
     mainWindow.show();
   });
