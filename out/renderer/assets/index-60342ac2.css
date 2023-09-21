@@ -1,0 +1,111 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.main {
+  display: flex;
+  gap: 10px;
+}
+
+.main > section {
+  width: var(--width, 35px);
+  height: calc(var(--width, 35px) * 1.5);
+  position: relative;
+}
+
+.main > p::after {
+  content: ":";
+  display: block;
+  width: 10px;
+  height: calc(var(--width, 35px) * 1.5);
+  font: bold calc(var(--width, 35px) * 1.5) arial;
+  text-align: center;
+  line-height: calc(var(--width, 35px) * 1.5);
+}
+
+.main > section > div {
+  position: absolute;
+}
+
+.main > section > div::before, .main > section > div::after {
+  display: block;
+  border-radius: 5px;
+  width: var(--width, 35px);
+  height: calc(var(--width, 35px) * 1.5 / 2);
+  text-align: center;
+  font: bold calc(var(--width, 35px) * 1.5) arial;
+  overflow: hidden;
+  color: var(--color, #fff);
+  background-color: var(--bgColor, #f1c40f);
+}
+
+.main > section > div::before {
+  content: attr(data-after);
+  line-height: calc(var(--width, 35px) * 1.5);
+}
+
+.main > section > div::after {
+  content: attr(data-before);
+  line-height: 0;
+}
+
+.main > section > div:nth-child(2) {
+  width: var(--width, 35px);
+  height: calc(var(--width, 35px) * 1.5 / 2);
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  transition: 0.5s;
+  transform-origin: bottom;
+}
+
+.main > section > div:nth-child(2)::before {
+  transform: rotateX(180deg);
+  line-height: 0;
+  background-color: var(--bgColor, #f1c40f);
+}
+
+.main > section > div:nth-child(2)::after {
+  transform: translateY(-100%);
+  line-height: calc(var(--width, 35px) * 1.5);
+}
+
+.main > section {
+  perspective: 200px;
+}
+
+.main > section > div:nth-child(2).flipDown {
+  animation-name: flipDown;
+  animation-duration: 0.6s;
+  animation-fill-mode: both;
+}
+
+@keyframes flipDown {
+  to {
+    transform: rotateX(-180deg);
+  }
+}* {
+  box-sizing: border-box;
+}
+
+.drag {
+  -webkit-app-region: drag;
+}
+
+.nodrag,
+input,
+select,
+textarea,
+option {
+  -webkit-app-region: no-drag;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+}
+
+#app {
+  padding: 5px;
+}

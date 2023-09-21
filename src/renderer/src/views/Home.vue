@@ -18,3 +18,7 @@ onMounted(() => {
   instance.render()
 })
 </script>
+
+<style lang="scss">
+
+</style>
