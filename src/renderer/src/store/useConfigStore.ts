@@ -3,6 +3,7 @@ import { defineStore } from 'pinia'
 type footerType = {
   bgColor?: string
   color?: string
+  content?: string
 }
 type configType = {
   type: 'clock' | 'timing'
@@ -30,7 +31,8 @@ export const useConfigStore = defineStore('config', {
         },
         footer: {
           bgColor: 'red',
-          color: '#fff'
+          color: '#ff',
+          content:'点赞是一种美德'
         }
       }
     }
