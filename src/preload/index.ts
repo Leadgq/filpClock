@@ -1,4 +1,4 @@
-import { contextBridge, IgnoreMouseEventsOptions, ipcRenderer } from "electron";
+import { contextBridge, IgnoreMouseEventsOptions, ipcRenderer } from 'electron'
 import { electronAPI } from '@electron-toolkit/preload'
 
 // Custom APIs for renderer
