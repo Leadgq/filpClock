@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import NavBar from './components/NavBar.vue'
+import Footer from '@renderer/components/Footer.vue'
 import { onMounted } from 'vue'
 import useMouseEvent from '@renderer/composables/useMouseEvent'
 onMounted(() => {
@@ -11,8 +11,10 @@ onMounted(() => {
 <template>
   <Suspense>
     <RouterView v-slot="{ Component }">
-      <NavBar />
-      <Component :is="Component" class="flex flex-col justify-center items-center drag" />
+      <div class="flex flex-col justify-center items-center">
+        <Component :is="Component" class="drag" />
+        <Footer />
+      </div>
     </RouterView>
   </Suspense>
 </template>

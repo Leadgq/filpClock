@@ -29,13 +29,13 @@ export const useConfigStore = defineStore('config', {
           color: '#000',
           timing: {
             hour: 0,
-            minute: 0,
+            minute: 8,
             second: 0
           }
         },
         footer: {
-          bgColor: 'red',
-          color: '#ff',
+          bgColor: '#16a085',
+          color: '#fff',
           content: '点赞是一种美德'
         }
       }

@@ -7,13 +7,11 @@
         '--color': store.clock.config.color
       }"
     ></div>
-    <Footer />
   </main>
 </template>
 
 <script setup lang="ts">
 import FlipClock from '../composables/FlipClock'
-import Footer from '../components/Footer.vue'
 import { watch, ref, onMounted } from 'vue'
 import '@renderer/assets/flipclock.scss'
 import { useConfigStore } from '@renderer/store/useConfigStore'
