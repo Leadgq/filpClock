@@ -4,6 +4,9 @@ const preload = require("@electron-toolkit/preload");
 const api = {
   setIgnoreMouseEvents: (ignore, options) => {
     electron.ipcRenderer.send("setIgnoreMouseEvents", ignore, options);
+  },
+  changeWindowSize(size) {
+    electron.ipcRenderer.send("changeWindowSize", size);
   }
 };
 if (process.contextIsolated) {

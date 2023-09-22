@@ -52,5 +52,15 @@ export const useConfigStore = defineStore('config', {
         ...footer
       }
     }
+  },
+  persist: {
+    enabled: true,
+    strategies: [
+      {
+        key: 'clock',
+        storage: localStorage,
+        paths: ['clock']
+      }
+    ]
   }
 })

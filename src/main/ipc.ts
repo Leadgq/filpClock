@@ -7,3 +7,4 @@ ipcMain.on(
     win?.setIgnoreMouseEvents(ignore, options)
   }
 )
+

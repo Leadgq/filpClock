@@ -10,6 +10,10 @@ electron.ipcMain.on(
     win?.setIgnoreMouseEvents(ignore, options);
   }
 );
+electron.ipcMain.on("changeWindowSize", (event, size) => {
+  const win = electron.BrowserWindow.fromWebContents(event.sender);
+  win?.setSize(size, 400);
+});
 function createWindow() {
   const mainWindow = new electron.BrowserWindow({
     width: 330,

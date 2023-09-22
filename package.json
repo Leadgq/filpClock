@@ -25,6 +25,7 @@
     "@icon-park/vue-next": "^1.4.2",
     "electron-updater": "^6.1.1",
     "element-plus": "^2.3.14",
+    "pinia-plugin-persist": "^1.0.0",
     "vue-router": "4"
   },
   "devDependencies": {
