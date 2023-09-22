@@ -3,8 +3,8 @@
     class="rounded-[3px] text-white text-center bg-red-500 mt-[5px] text-[15px] w-[94%] flex items-center justify-between px-2 py-[3px]"
     :style="footerStyle"
   >
-    <div class="text-left flex-1 truncate">{{ footerContent }}</div>
-    <NavBar class="w-[30%] ml-[10px]" />
+    <div class="text-left flex-1 truncate content">{{ footerContent }}</div>
+    <NavBar class="ml-[10px]" />
   </div>
 </template>
 
@@ -24,3 +24,9 @@ watchPostEffect(() => {
   footerContent.value = store.clock.footer.content
 })
 </script>
+
+<style lang="scss" scoped>
+.content {
+  user-select: none;
+}
+</style>

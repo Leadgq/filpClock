@@ -1,5 +1,5 @@
 <template>
-  <main class="flex justify-between items-center">
+  <main class="flex items-center">
     <div @click="toggle">
       <alarm-clock
         v-if="currentActionIcon === 'timing'"
@@ -11,7 +11,11 @@
     </div>
     <div class="opacity-80 text-sm text-gray-800">
       <router-link v-if="$route.name === 'config'" :to="{ name: 'clock' }">时钟</router-link>
-      <router-link v-else :to="{ name: 'config' }" :style="{ color: store.clock.footer.color }"
+      <router-link
+        v-else
+        :to="{ name: 'config' }"
+        :style="{ color: store.clock.footer.color }"
+        class="ml-2"
         >配置</router-link
       >
     </div>
