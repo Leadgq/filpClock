@@ -42,8 +42,19 @@
 </template>
 
 <script setup lang="ts">
+import { watch } from 'vue'
 import { useConfigStore } from '@renderer/store/useConfigStore'
 const store = useConfigStore()
+// 如果倒计时值有发生 变化，就切换到倒计时模式
+watch(
+  () => store.clock.config.timing,
+  () => {
+    store.clock.config.type = 'timing'
+  },
+  {
+    deep: true
+  }
+)
 </script>
 
 <style scoped lang="scss">
@@ -64,7 +75,7 @@ h2 {
     -webkit-app-region: no-drag;
   }
   &:deep(.el-input-number--small) {
-    width: 75px;
+    width: 85px;
   }
 }
 </style>

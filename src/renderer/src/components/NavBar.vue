@@ -1,5 +1,6 @@
 <template>
   <main class="flex items-center">
+    <refresh-one theme="outline" size="16" class="mr-2 cursor-pointer" @click="refresh" />
     <div @click="toggle">
       <alarm-clock
         v-if="currentActionIcon === 'timing'"
@@ -33,11 +34,13 @@
 <script setup lang="ts">
 import { useRoute } from 'vue-router'
 import { useConfigStore } from '@renderer/store/useConfigStore'
-import { AlarmClock, Time } from '@icon-park/vue-next'
-import { computed } from 'vue'
+import { AlarmClock, Time, RefreshOne } from '@icon-park/vue-next'
+import { computed, ref } from 'vue'
 import router from '@renderer/route/index'
 const route = useRoute()
 const store = useConfigStore()
+// 用于给时钟刷新、每次值都不同
+const isRefreshFlag = ref(false)
 const toggle = () => {
   if (route.name !== 'clock') {
     router.push({ name: 'clock' })
@@ -46,10 +49,13 @@ const toggle = () => {
   store.clock.config.type = store.clock.config.type === 'clock' ? 'timing' : 'clock'
 }
 const currentActionIcon = computed(() => store.clock.config.type)
-
 const setClockConfig = (type: 'clock' | 'timing') => {
   const size = type === 'clock' ? 330 : 400
   window.api.changeWindowSize(size)
+}
+const refresh = () => {
+  isRefreshFlag.value = !isRefreshFlag.value
+  store.setIsRefresh(isRefreshFlag.value)
 }
 </script>
 <style scoped lang="scss">

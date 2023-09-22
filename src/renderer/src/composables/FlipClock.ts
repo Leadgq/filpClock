@@ -40,6 +40,11 @@ export default class FlipClock extends FlipNumber {
     clearInterval(this.intervalId)
   }
 
+  // 刷新
+  refresh(config: OptionsType) {
+    this.destroy().config(config).render()
+  }
+
   //执行div的渲染
   updateDivNumber() {
     this.divs.forEach((divs, index) => {

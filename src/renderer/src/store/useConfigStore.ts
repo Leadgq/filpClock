@@ -22,6 +22,7 @@ type ClockType = {
 export const useConfigStore = defineStore('config', {
   state: () => {
     return {
+      isRefresh: false,
       clock: <ClockType>{
         config: <configType>{
           type: 'clock' as 'clock' | 'timing',
@@ -51,6 +52,9 @@ export const useConfigStore = defineStore('config', {
         ...this.clock.footer,
         ...footer
       }
+    },
+    setIsRefresh(state: boolean) {
+      this.isRefresh = state
     }
   },
   persist: {

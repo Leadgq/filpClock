@@ -13,11 +13,12 @@
 <script setup lang="ts">
 import FlipClock from '../composables/FlipClock'
 import { watch, ref, onMounted } from 'vue'
+import { useRoute } from 'vue-router'
 import '@renderer/assets/flipclock.scss'
 import { useConfigStore } from '@renderer/store/useConfigStore'
 const store = useConfigStore()
 const instance = ref<FlipClock>()
-
+const route = useRoute()
 onMounted(() => {
   instance.value = new FlipClock({
     el: '#flip-number',
@@ -30,14 +31,22 @@ onMounted(() => {
 watch(
   () => store.clock.config.type,
   () => {
-    if (instance.value) {
-      instance.value
-        .destroy()
-        .config({ el: '#flip-number', ...store.clock.config })
-        .render()
-    }
+    refreshClick()
   }
 )
+watch(
+  () => store.isRefresh,
+  () => {
+    if (route.name !== 'clock') return
+    refreshClick()
+  }
+)
+
+const refreshClick = () => {
+  if (instance.value) {
+    instance.value.refresh({ el: '#flip-number', ...store.clock.config })
+  }
+}
 </script>
 
 <style lang="scss"></style>
