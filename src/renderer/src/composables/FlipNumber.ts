@@ -8,7 +8,6 @@ export type OptionsType = {
 
 export default class FlipNumber {
   protected nums: number[] = []
-
   protected endTime: dayjs.Dayjs | undefined
   constructor(protected options: OptionsType) {
     this.options = Object.assign({ type: 'clock', style: 'hd' }, options)
@@ -34,20 +33,20 @@ export default class FlipNumber {
 
   //倒计时的数字
   getTimingNums() {
-    const hour = this.endTime!.diff(dayjs(), 'hour')
-    const minute = this.endTime!.diff(dayjs().add(hour, 'hour'), 'minute')
-    const second = this.endTime!.diff(dayjs().add(hour, 'hour').add(minute, 'minute'), 'second')
-
-    const hourString = hour > 9 ? hour : '0' + hour
-    const minuteString = minute > 9 ? minute : '0' + minute
-    const secondString = second > 9 ? second : '0' + second
-
-    //取数字的数量，有小时的时候取6位
-    const len = hourString == '00' ? 4 : 6
-    this.nums = (hourString + '' + minuteString + secondString)
-      .substring(6 - len)
+    this.nums = this.getDiffTime(this.endTime)
+      .replaceAll(/:/g, '')
       .split('')
       .map((n) => +n)
+  }
+
+  getDiffTime(time) {
+    let hour = time.diff(dayjs(), 'hour')
+    let minute = time.diff(dayjs().add(hour, 'hour'), 'minute')
+    let seconds = time.diff(dayjs().add(hour, 'hour').add(minute, 'minute'), 'second')
+    hour = hour > 9 ? hour : '0' + hour
+    minute = minute > 9 ? minute : '0' + minute
+    seconds = seconds > 9 ? seconds : '0' + seconds
+    return `${hour}:${minute}:${seconds}`
   }
 
   //获取时间的数字
@@ -63,11 +62,23 @@ export default class FlipNumber {
     const before = this.nums[index]
     let after = before - 1
     if (index % 2) {
-      after = after < 0 ? 9 : after
+      // 小时
+      if (index === 1 && this.nums.length === 6) {
+        after = 0
+      } else {
+        after = after < 0 ? 9 : after
+      }
     } else {
-      after = after < 0 ? 5 : after
+      if (index === 1 && this.nums.length === 4) {
+        after = 0
+      } else {
+        after = after < 0 ? 5 : after
+      }
     }
-    return { before, after }
+    return {
+      before,
+      after
+    }
   }
 
   //时间的数字
