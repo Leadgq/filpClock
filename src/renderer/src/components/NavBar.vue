@@ -41,14 +41,19 @@ const route = useRoute()
 const store = useConfigStore()
 // 用于给时钟刷新、每次值都不同
 const isRefreshFlag = ref(false)
+// 点击时钟icon切换
 const toggle = () => {
+  // 只要点击窗口就是330
+  window.api.changeWindowSize(330)
   if (route.name !== 'clock') {
     router.push({ name: 'clock' })
     return
   }
+  // 切换时钟和倒计时
   store.clock.config.type = store.clock.config.type === 'clock' ? 'timing' : 'clock'
 }
 const currentActionIcon = computed(() => store.clock.config.type)
+// 点击时钟和配置之间的切换
 const setClockConfig = (type: 'clock' | 'timing') => {
   const size = type === 'clock' ? 330 : 400
   window.api.changeWindowSize(size)
