@@ -10,9 +10,15 @@ electron.ipcMain.on(
     win?.setIgnoreMouseEvents(ignore, options);
   }
 );
-electron.ipcMain.on("changeWindowSize", (event, size) => {
+electron.ipcMain.on("changeWindowSize", (event, width) => {
   const win = electron.BrowserWindow.fromWebContents(event.sender);
-  win?.setSize(size, 400);
+  const position = win?.getPosition();
+  let x, y;
+  if (position) {
+    x = position[0];
+    y = position[1];
+    win?.setBounds({ x, y, width, height: 400 });
+  }
 });
 function createWindow() {
   const mainWindow = new electron.BrowserWindow({

@@ -15,6 +15,7 @@
         :to="{ name: 'clock' }"
         :style="{ color: store.clock.footer.color }"
         class="ml-2"
+        @click="setClockConfig('clock')"
         >时钟</router-link
       >
       <router-link
@@ -22,6 +23,7 @@
         :to="{ name: 'config' }"
         :style="{ color: store.clock.footer.color }"
         class="ml-2"
+        @click="setClockConfig('timing')"
         >配置</router-link
       >
     </div>
@@ -44,6 +46,11 @@ const toggle = () => {
   store.clock.config.type = store.clock.config.type === 'clock' ? 'timing' : 'clock'
 }
 const currentActionIcon = computed(() => store.clock.config.type)
+
+const setClockConfig = (type: 'clock' | 'timing') => {
+  const size = type === 'clock' ? 330 : 400
+  window.api.changeWindowSize(size)
+}
 </script>
 <style scoped lang="scss">
 main {

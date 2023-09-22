@@ -5,6 +5,9 @@ import { electronAPI } from '@electron-toolkit/preload'
 const api = {
   setIgnoreMouseEvents: (ignore: boolean, options?: IgnoreMouseEventsOptions) => {
     ipcRenderer.send('setIgnoreMouseEvents', ignore, options)
+  },
+  changeWindowSize(width: number) {
+    ipcRenderer.send('changeWindowSize', width)
   }
 }
 
