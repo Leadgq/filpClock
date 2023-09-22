@@ -7,6 +7,8 @@ type footerType = {
 }
 type configType = {
   type: 'clock' | 'timing'
+  background?: string
+  color?: string
   timing: {
     hour?: number
     minute?: number
@@ -23,6 +25,8 @@ export const useConfigStore = defineStore('config', {
       clock: <ClockType>{
         config: <configType>{
           type: 'clock' as 'clock' | 'timing',
+          background: '#000',
+          color: '#fff',
           timing: {
             hour: 0,
             minute: 0,
@@ -32,7 +36,7 @@ export const useConfigStore = defineStore('config', {
         footer: {
           bgColor: 'red',
           color: '#ff',
-          content:'点赞是一种美德'
+          content: '点赞是一种美德'
         }
       }
     }

@@ -1,6 +1,12 @@
 <template>
   <main>
-    <div id="flip-number"></div>
+    <div
+      id="flip-number"
+      :style="{
+        '--bgColor': store.clock.config.background,
+        '--color': store.clock.config.color
+      }"
+    ></div>
     <Footer />
   </main>
 </template>
@@ -36,8 +42,4 @@ watch(
 )
 </script>
 
-<style lang="scss">
-:root {
-  --bgColor: #000;
-}
-</style>
+<style lang="scss"></style>
