@@ -19,7 +19,7 @@
           <el-input-number
             v-model="store.clock.config.timing.hour"
             :min="0"
-            :max="10"
+            :max="12"
             size="small"
           />
         </div>
@@ -28,7 +28,7 @@
           <el-input-number
             v-model="store.clock.config.timing.minute"
             :min="0"
-            :max="10"
+            :max="60"
             size="small"
           />
         </div>
