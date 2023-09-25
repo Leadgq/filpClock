@@ -43,16 +43,6 @@ export const useConfigStore = defineStore('config', {
     }
   },
   actions: {
-    setConfig(config: configType, footer?: footerType) {
-      this.clock.config = {
-        ...this.clock.config,
-        ...config
-      }
-      this.clock.footer = {
-        ...this.clock.footer,
-        ...footer
-      }
-    },
     setIsRefresh(state: boolean) {
       this.isRefresh = state
     }

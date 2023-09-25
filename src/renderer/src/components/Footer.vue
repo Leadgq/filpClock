@@ -3,7 +3,7 @@
     class="rounded-[3px] text-white text-center bg-red-500 mt-[5px] text-[15px] w-[94%] flex items-center justify-between px-2 py-[3px]"
     :style="footerStyle"
   >
-    <div class="text-left flex-1 truncate content">{{ footerContent }}</div>
+    <div class="text-left flex-1 truncate content drag">{{ footerContent }}</div>
     <NavBar class="ml-[10px]" />
   </div>
 </template>

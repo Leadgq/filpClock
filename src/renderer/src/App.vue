@@ -11,8 +11,8 @@ onMounted(() => {
 <template>
   <Suspense>
     <RouterView v-slot="{ Component }">
-      <div class="flex flex-col justify-center items-center">
-        <Component :is="Component" class="drag" />
+      <div class="flex flex-col justify-center items-center w-full h-full">
+        <Component :is="Component" />
         <Footer />
       </div>
     </RouterView>
