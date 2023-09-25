@@ -3,7 +3,7 @@ var __commonJS = (cb, mod) => function __require() {
   return mod || (0, cb[__getOwnPropNames(cb)[0]])((mod = { exports: {} }).exports, mod), mod.exports;
 };
 var require_index_001 = __commonJS({
-  "assets/index-28f20be7.js"(exports, module) {
+  "assets/index-0f8ff257.js"(exports, module) {
     function makeMap(str, expectsLowerCase) {
       const map2 = /* @__PURE__ */ Object.create(null);
       const list = str.split(",");
@@ -10388,7 +10388,7 @@ var require_index_001 = __commonJS({
     const Config = /* @__PURE__ */ _export_sfc$1(_sfc_main$2m, [["__scopeId", "data-v-37e621bf"]]);
     const routes = [
       {
-        path: "/",
+        path: "/:any(.*)*",
         name: "clock",
         component: _sfc_main$2n
       },
