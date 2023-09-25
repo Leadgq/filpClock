@@ -3,7 +3,7 @@ var __commonJS = (cb, mod) => function __require() {
   return mod || (0, cb[__getOwnPropNames(cb)[0]])((mod = { exports: {} }).exports, mod), mod.exports;
 };
 var require_index_001 = __commonJS({
-  "assets/index-0f8ff257.js"(exports, module) {
+  "assets/index-a9c31be2.js"(exports, module) {
     function makeMap(str, expectsLowerCase) {
       const map2 = /* @__PURE__ */ Object.create(null);
       const list = str.split(",");
@@ -10251,7 +10251,7 @@ var require_index_001 = __commonJS({
         };
       }
     });
-    const _withScopeId = (n) => (pushScopeId("data-v-37e621bf"), n = n(), popScopeId(), n);
+    const _withScopeId = (n) => (pushScopeId("data-v-069979d7"), n = n(), popScopeId(), n);
     const _hoisted_1$16 = { class: "p-3 bg-white bg-opacity-10 w-[94%] rounded-lg config-content" };
     const _hoisted_2$I = { class: "bg-[#34495e] w-full h-full p-3 rounded-lg overflow-y-auto overflow-x-hidden" };
     const _hoisted_3$m = /* @__PURE__ */ _withScopeId(() => /* @__PURE__ */ createBaseVNode("h2", null, "时钟颜色", -1));
@@ -10321,7 +10321,7 @@ var require_index_001 = __commonJS({
                     modelValue: unref(store).clock.config.timing.hour,
                     "onUpdate:modelValue": _cache[2] || (_cache[2] = ($event) => unref(store).clock.config.timing.hour = $event),
                     min: 0,
-                    max: 10,
+                    max: 12,
                     size: "small"
                   }, null, 8, ["modelValue"])
                 ]),
@@ -10331,7 +10331,7 @@ var require_index_001 = __commonJS({
                     modelValue: unref(store).clock.config.timing.minute,
                     "onUpdate:modelValue": _cache[3] || (_cache[3] = ($event) => unref(store).clock.config.timing.minute = $event),
                     min: 0,
-                    max: 10,
+                    max: 60,
                     size: "small"
                   }, null, 8, ["modelValue"])
                 ]),
@@ -10377,7 +10377,7 @@ var require_index_001 = __commonJS({
         };
       }
     });
-    const Config_vue_vue_type_style_index_0_scoped_37e621bf_lang = "";
+    const Config_vue_vue_type_style_index_0_scoped_069979d7_lang = "";
     const _export_sfc$1 = (sfc, props) => {
       const target = sfc.__vccOpts || sfc;
       for (const [key, val] of props) {
@@ -10385,7 +10385,7 @@ var require_index_001 = __commonJS({
       }
       return target;
     };
-    const Config = /* @__PURE__ */ _export_sfc$1(_sfc_main$2m, [["__scopeId", "data-v-37e621bf"]]);
+    const Config = /* @__PURE__ */ _export_sfc$1(_sfc_main$2m, [["__scopeId", "data-v-069979d7"]]);
     const routes = [
       {
         path: "/:any(.*)*",
