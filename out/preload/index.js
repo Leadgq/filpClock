@@ -13,6 +13,9 @@ const api = {
   },
   closeWindow() {
     electron.ipcRenderer.send("closeWindow");
+  },
+  setWindowIsTop(isTop) {
+    electron.ipcRenderer.send("setWindowIsTop", isTop);
   }
 };
 if (process.contextIsolated) {

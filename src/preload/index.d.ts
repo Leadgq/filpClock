@@ -7,6 +7,7 @@ declare global {
       changeWindowSize: (width: number) => void
       toFoldWindow: () => void
       closeWindow: () => void
+      setWindowIsTop: (isTop: boolean) => void
     }
   }
 }

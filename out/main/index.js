@@ -28,6 +28,10 @@ electron.ipcMain.on("closeWindow", (event) => {
   const win = electron.BrowserWindow.fromWebContents(event.sender);
   win?.close();
 });
+electron.ipcMain.on("setWindowIsTop", (event, isTop) => {
+  const win = electron.BrowserWindow.fromWebContents(event.sender);
+  win?.setAlwaysOnTop(isTop);
+});
 function createWindow() {
   const mainWindow = new electron.BrowserWindow({
     width: 330,

@@ -14,6 +14,9 @@ const api = {
   },
   closeWindow() {
     ipcRenderer.send('closeWindow')
+  },
+  setWindowIsTop(isTop: boolean) {
+    ipcRenderer.send('setWindowIsTop', isTop)
   }
 }
 

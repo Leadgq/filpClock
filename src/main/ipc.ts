@@ -28,3 +28,8 @@ ipcMain.on('closeWindow', (event: IpcMainEvent) => {
   const win = BrowserWindow.fromWebContents(event.sender)
   win?.close()
 })
+
+ipcMain.on('setWindowIsTop', (event: IpcMainEvent, isTop: boolean) => {
+  const win = BrowserWindow.fromWebContents(event.sender)
+  win?.setAlwaysOnTop(isTop)
+})

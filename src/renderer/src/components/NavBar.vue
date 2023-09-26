@@ -1,15 +1,19 @@
 <template>
   <main class="flex items-center">
-    <refresh-one theme="outline" size="16" class="mr-2 cursor-pointer" @click="refresh" />
-    <div @click="toggle">
-      <alarm-clock
-        v-if="currentActionIcon === 'timing'"
-        theme="outline"
-        size="16"
-        class="cursor-pointer"
-      />
-      <Time v-else theme="outline" size="16" class="cursor-pointer" />
-    </div>
+    <el-tooltip content="重置倒计时" placement="top-start">
+      <refresh-one theme="outline" size="16" class="mr-2 cursor-pointer" @click="refresh" />
+    </el-tooltip>
+    <el-tooltip content="模式切换" placement="top-start">
+      <div @click="toggle">
+        <alarm-clock
+          v-if="currentActionIcon === 'timing'"
+          theme="outline"
+          size="16"
+          class="cursor-pointer"
+        />
+        <Time v-else theme="outline" size="16" class="cursor-pointer" />
+      </div>
+    </el-tooltip>
     <div class="opacity-80 text-sm text-gray-800">
       <router-link
         v-if="$route.name === 'config'"
