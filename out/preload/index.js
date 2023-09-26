@@ -7,6 +7,12 @@ const api = {
   },
   changeWindowSize(width) {
     electron.ipcRenderer.send("changeWindowSize", width);
+  },
+  toFoldWindow() {
+    electron.ipcRenderer.send("toFoldWindow");
+  },
+  closeWindow() {
+    electron.ipcRenderer.send("closeWindow");
   }
 };
 if (process.contextIsolated) {

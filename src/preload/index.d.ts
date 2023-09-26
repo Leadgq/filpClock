@@ -5,6 +5,8 @@ declare global {
     api: {
       setIgnoreMouseEvents: (ignore: boolean, options?: IgnoreMouseEventsOptions) => void
       changeWindowSize: (width: number) => void
+      toFoldWindow: () => void
+      closeWindow: () => void
     }
   }
 }

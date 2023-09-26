@@ -8,6 +8,12 @@ const api = {
   },
   changeWindowSize(width: number) {
     ipcRenderer.send('changeWindowSize', width)
+  },
+  toFoldWindow() {
+    ipcRenderer.send('toFoldWindow')
+  },
+  closeWindow() {
+    ipcRenderer.send('closeWindow')
   }
 }
 

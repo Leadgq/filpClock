@@ -20,6 +20,14 @@ electron.ipcMain.on("changeWindowSize", (event, width) => {
     win?.setBounds({ x, y, width, height: 400 });
   }
 });
+electron.ipcMain.on("toFoldWindow", (event) => {
+  const win = electron.BrowserWindow.fromWebContents(event.sender);
+  win?.minimize();
+});
+electron.ipcMain.on("closeWindow", (event) => {
+  const win = electron.BrowserWindow.fromWebContents(event.sender);
+  win?.close();
+});
 function createWindow() {
   const mainWindow = new electron.BrowserWindow({
     width: 330,

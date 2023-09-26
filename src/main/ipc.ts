@@ -18,3 +18,13 @@ ipcMain.on('changeWindowSize', (event: IpcMainEvent, width: number) => {
     win?.setBounds({ x, y, width, height: 400 })
   }
 })
+
+ipcMain.on('toFoldWindow', (event: IpcMainEvent) => {
+  const win = BrowserWindow.fromWebContents(event.sender)
+  win?.minimize()
+})
+
+ipcMain.on('closeWindow', (event: IpcMainEvent) => {
+  const win = BrowserWindow.fromWebContents(event.sender)
+  win?.close()
+})
