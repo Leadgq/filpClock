@@ -3,7 +3,7 @@ var __commonJS = (cb, mod) => function __require() {
   return mod || (0, cb[__getOwnPropNames(cb)[0]])((mod = { exports: {} }).exports, mod), mod.exports;
 };
 var require_index_001 = __commonJS({
-  "assets/index-a9c31be2.js"(exports, module) {
+  "assets/index-a422eaf4.js"(exports, module) {
     function makeMap(str, expectsLowerCase) {
       const map2 = /* @__PURE__ */ Object.create(null);
       const list = str.split(",");
@@ -9682,6 +9682,79 @@ var require_index_001 = __commonJS({
         "stroke-linejoin": props.strokeLinejoin
       }, null)]);
     });
+    const ClickToFold = IconWrapper("click-to-fold", true, function(props) {
+      return createVNode("svg", {
+        "width": props.size,
+        "height": props.size,
+        "viewBox": "0 0 48 48",
+        "fill": "none"
+      }, [createVNode("path", {
+        "d": "M27 9V21H39",
+        "stroke": props.colors[0],
+        "stroke-width": props.strokeWidth,
+        "stroke-linecap": props.strokeLinecap,
+        "stroke-linejoin": props.strokeLinejoin
+      }, null), createVNode("path", {
+        "d": "M21 39V27H9",
+        "stroke": props.colors[0],
+        "stroke-width": props.strokeWidth,
+        "stroke-linecap": props.strokeLinecap,
+        "stroke-linejoin": props.strokeLinejoin
+      }, null), createVNode("path", {
+        "d": "M27 21L42 6",
+        "stroke": props.colors[0],
+        "stroke-width": props.strokeWidth,
+        "stroke-linecap": props.strokeLinecap,
+        "stroke-linejoin": props.strokeLinejoin
+      }, null), createVNode("path", {
+        "d": "M21 27L6 42",
+        "stroke": props.colors[0],
+        "stroke-width": props.strokeWidth,
+        "stroke-linecap": props.strokeLinecap,
+        "stroke-linejoin": props.strokeLinejoin
+      }, null)]);
+    });
+    const Close = IconWrapper("close", false, function(props) {
+      return createVNode("svg", {
+        "width": props.size,
+        "height": props.size,
+        "viewBox": "0 0 48 48",
+        "fill": "none"
+      }, [createVNode("path", {
+        "d": "M8 8L40 40",
+        "stroke": props.colors[0],
+        "stroke-width": props.strokeWidth,
+        "stroke-linecap": props.strokeLinecap,
+        "stroke-linejoin": props.strokeLinejoin
+      }, null), createVNode("path", {
+        "d": "M8 40L40 8",
+        "stroke": props.colors[0],
+        "stroke-width": props.strokeWidth,
+        "stroke-linecap": props.strokeLinecap,
+        "stroke-linejoin": props.strokeLinejoin
+      }, null)]);
+    });
+    const MinusTheTop = IconWrapper("minus-the-top", true, function(props) {
+      return createVNode("svg", {
+        "width": props.size,
+        "height": props.size,
+        "viewBox": "0 0 48 48",
+        "fill": "none"
+      }, [createVNode("path", {
+        "d": "M5 41V21C5 19.8954 5.89543 19 7 19H19H27C28.1046 19 29 19.8954 29 21V29V41C29 42.1046 28.1046 43 27 43H7C5.89543 43 5 42.1046 5 41Z",
+        "fill": props.colors[1],
+        "stroke": props.colors[0],
+        "stroke-width": props.strokeWidth,
+        "stroke-linecap": props.strokeLinecap,
+        "stroke-linejoin": props.strokeLinejoin
+      }, null), createVNode("path", {
+        "d": "M43 7V27C43 28.1046 42.1046 29 41 29H31C29.8954 29 29 28.1046 29 27V21C29 19.8954 28.1046 19 27 19H21C19.8954 19 19 18.1046 19 17V7C19 5.89543 19.8954 5 21 5H41C42.1046 5 43 5.89543 43 7Z",
+        "stroke": props.colors[0],
+        "stroke-width": props.strokeWidth,
+        "stroke-linecap": props.strokeLinecap,
+        "stroke-linejoin": props.strokeLinejoin
+      }, null)]);
+    });
     const RefreshOne = IconWrapper("refresh-one", true, function(props) {
       return createVNode("svg", {
         "width": props.size,
@@ -10205,7 +10278,7 @@ var require_index_001 = __commonJS({
       }
     }
     const flipclock = "";
-    const _sfc_main$2n = /* @__PURE__ */ defineComponent({
+    const _sfc_main$2o = /* @__PURE__ */ defineComponent({
       __name: "Clock",
       setup(__props) {
         const store = useConfigStore();
@@ -10252,8 +10325,8 @@ var require_index_001 = __commonJS({
       }
     });
     const _withScopeId = (n) => (pushScopeId("data-v-069979d7"), n = n(), popScopeId(), n);
-    const _hoisted_1$16 = { class: "p-3 bg-white bg-opacity-10 w-[94%] rounded-lg config-content" };
-    const _hoisted_2$I = { class: "bg-[#34495e] w-full h-full p-3 rounded-lg overflow-y-auto overflow-x-hidden" };
+    const _hoisted_1$17 = { class: "p-3 bg-white bg-opacity-10 w-[94%] rounded-lg config-content" };
+    const _hoisted_2$J = { class: "bg-[#34495e] w-full h-full p-3 rounded-lg overflow-y-auto overflow-x-hidden" };
     const _hoisted_3$m = /* @__PURE__ */ _withScopeId(() => /* @__PURE__ */ createBaseVNode("h2", null, "时钟颜色", -1));
     const _hoisted_4$c = { class: "block" };
     const _hoisted_5$8 = { class: "card" };
@@ -10277,7 +10350,7 @@ var require_index_001 = __commonJS({
     const _hoisted_23$1 = /* @__PURE__ */ _withScopeId(() => /* @__PURE__ */ createBaseVNode("p", null, "背景颜色", -1));
     const _hoisted_24 = { class: "card" };
     const _hoisted_25 = /* @__PURE__ */ _withScopeId(() => /* @__PURE__ */ createBaseVNode("p", null, "字体颜色", -1));
-    const _sfc_main$2m = /* @__PURE__ */ defineComponent({
+    const _sfc_main$2n = /* @__PURE__ */ defineComponent({
       __name: "Config",
       setup(__props) {
         const store = useConfigStore();
@@ -10294,8 +10367,8 @@ var require_index_001 = __commonJS({
           const _component_el_color_picker = resolveComponent("el-color-picker");
           const _component_el_input_number = resolveComponent("el-input-number");
           const _component_el_input = resolveComponent("el-input");
-          return openBlock(), createElementBlock("div", _hoisted_1$16, [
-            createBaseVNode("div", _hoisted_2$I, [
+          return openBlock(), createElementBlock("div", _hoisted_1$17, [
+            createBaseVNode("div", _hoisted_2$J, [
               _hoisted_3$m,
               createBaseVNode("div", _hoisted_4$c, [
                 createBaseVNode("div", _hoisted_5$8, [
@@ -10385,12 +10458,12 @@ var require_index_001 = __commonJS({
       }
       return target;
     };
-    const Config = /* @__PURE__ */ _export_sfc$1(_sfc_main$2m, [["__scopeId", "data-v-069979d7"]]);
+    const Config = /* @__PURE__ */ _export_sfc$1(_sfc_main$2n, [["__scopeId", "data-v-069979d7"]]);
     const routes = [
       {
         path: "/:any(.*)*",
         name: "clock",
-        component: _sfc_main$2n
+        component: _sfc_main$2o
       },
       {
         path: "/config",
@@ -10402,9 +10475,9 @@ var require_index_001 = __commonJS({
       history: createWebHistory(),
       routes
     });
-    const _hoisted_1$15 = { class: "flex items-center" };
-    const _hoisted_2$H = { class: "opacity-80 text-sm text-gray-800" };
-    const _sfc_main$2l = /* @__PURE__ */ defineComponent({
+    const _hoisted_1$16 = { class: "flex items-center" };
+    const _hoisted_2$I = { class: "opacity-80 text-sm text-gray-800" };
+    const _sfc_main$2m = /* @__PURE__ */ defineComponent({
       __name: "NavBar",
       setup(__props) {
         const route = useRoute();
@@ -10428,28 +10501,45 @@ var require_index_001 = __commonJS({
           store.setIsRefresh(isRefreshFlag.value);
         };
         return (_ctx, _cache) => {
+          const _component_el_tooltip = resolveComponent("el-tooltip");
           const _component_router_link = resolveComponent("router-link");
-          return openBlock(), createElementBlock("main", _hoisted_1$15, [
-            createVNode(unref(RefreshOne), {
-              theme: "outline",
-              size: "16",
-              class: "mr-2 cursor-pointer",
-              onClick: refresh
+          return openBlock(), createElementBlock("main", _hoisted_1$16, [
+            createVNode(_component_el_tooltip, {
+              content: "重置倒计时",
+              placement: "top-start"
+            }, {
+              default: withCtx(() => [
+                createVNode(unref(RefreshOne), {
+                  theme: "outline",
+                  size: "16",
+                  class: "mr-2 cursor-pointer",
+                  onClick: refresh
+                })
+              ]),
+              _: 1
             }),
-            createBaseVNode("div", { onClick: toggle }, [
-              currentActionIcon.value === "timing" ? (openBlock(), createBlock(unref(AlarmClock), {
-                key: 0,
-                theme: "outline",
-                size: "16",
-                class: "cursor-pointer"
-              })) : (openBlock(), createBlock(unref(Time), {
-                key: 1,
-                theme: "outline",
-                size: "16",
-                class: "cursor-pointer"
-              }))
-            ]),
-            createBaseVNode("div", _hoisted_2$H, [
+            createVNode(_component_el_tooltip, {
+              content: "模式切换",
+              placement: "top-start"
+            }, {
+              default: withCtx(() => [
+                createBaseVNode("div", { onClick: toggle }, [
+                  currentActionIcon.value === "timing" ? (openBlock(), createBlock(unref(AlarmClock), {
+                    key: 0,
+                    theme: "outline",
+                    size: "16",
+                    class: "cursor-pointer"
+                  })) : (openBlock(), createBlock(unref(Time), {
+                    key: 1,
+                    theme: "outline",
+                    size: "16",
+                    class: "cursor-pointer"
+                  }))
+                ])
+              ]),
+              _: 1
+            }),
+            createBaseVNode("div", _hoisted_2$I, [
               _ctx.$route.name === "config" ? (openBlock(), createBlock(_component_router_link, {
                 key: 0,
                 to: { name: "clock" },
@@ -10478,10 +10568,10 @@ var require_index_001 = __commonJS({
         };
       }
     });
-    const NavBar_vue_vue_type_style_index_0_scoped_9c33f73e_lang = "";
-    const NavBar = /* @__PURE__ */ _export_sfc$1(_sfc_main$2l, [["__scopeId", "data-v-9c33f73e"]]);
-    const _hoisted_1$14 = { class: "text-left flex-1 truncate content drag" };
-    const _sfc_main$2k = /* @__PURE__ */ defineComponent({
+    const NavBar_vue_vue_type_style_index_0_scoped_858f08a5_lang = "";
+    const NavBar = /* @__PURE__ */ _export_sfc$1(_sfc_main$2m, [["__scopeId", "data-v-858f08a5"]]);
+    const _hoisted_1$15 = { class: "text-left flex-1 truncate content drag" };
+    const _sfc_main$2l = /* @__PURE__ */ defineComponent({
       __name: "Footer",
       setup(__props) {
         const store = useConfigStore();
@@ -10499,14 +10589,14 @@ var require_index_001 = __commonJS({
             class: "rounded-[3px] text-white text-center bg-red-500 mt-[5px] text-[15px] w-[94%] flex items-center justify-between px-2 py-[3px]",
             style: normalizeStyle(footerStyle.value)
           }, [
-            createBaseVNode("div", _hoisted_1$14, toDisplayString(footerContent.value), 1),
+            createBaseVNode("div", _hoisted_1$15, toDisplayString(footerContent.value), 1),
             createVNode(NavBar, { class: "ml-[10px]" })
           ], 4);
         };
       }
     });
     const Footer_vue_vue_type_style_index_0_scoped_57e33e0b_lang = "";
-    const Footer$3 = /* @__PURE__ */ _export_sfc$1(_sfc_main$2k, [["__scopeId", "data-v-57e33e0b"]]);
+    const Footer$3 = /* @__PURE__ */ _export_sfc$1(_sfc_main$2l, [["__scopeId", "data-v-57e33e0b"]]);
     const useMouseEvent = () => {
       const setIgnoreMouseEvents = () => {
         const el = document.querySelector("#app");
@@ -10523,6 +10613,74 @@ var require_index_001 = __commonJS({
       };
       return { setIgnoreMouseEvents };
     };
+    const _hoisted_1$14 = /* @__PURE__ */ createBaseVNode("div", { class: "text-sm select-none" }, "工具栏", -1);
+    const _hoisted_2$H = { class: "flex" };
+    const _sfc_main$2k = /* @__PURE__ */ defineComponent({
+      __name: "Tools",
+      setup(__props) {
+        const store = useConfigStore();
+        const isWindowTop = ref(true);
+        const isWindowText = ref("取消置顶");
+        const toFold = () => {
+          window.api.toFoldWindow();
+        };
+        const closeWin = () => {
+          window.api.closeWindow();
+        };
+        const setWindowIsTop = () => {
+          isWindowTop.value = !isWindowTop.value;
+          isWindowText.value = isWindowTop.value ? "取消置顶" : "置顶";
+          window.api.setWindowIsTop(isWindowTop.value);
+        };
+        return (_ctx, _cache) => {
+          const _component_el_tooltip = resolveComponent("el-tooltip");
+          return openBlock(), createElementBlock("div", {
+            class: "tools w-[94%] bg-white mb-2 opacity-0 rounded-sm text-white hover:opacity-100 p-1 flex justify-between items-center",
+            style: normalizeStyle({
+              backgroundColor: unref(store).clock.footer.bgColor,
+              color: unref(store).clock.footer.color
+            })
+          }, [
+            _hoisted_1$14,
+            createBaseVNode("div", _hoisted_2$H, [
+              createVNode(_component_el_tooltip, { content: isWindowText.value }, {
+                default: withCtx(() => [
+                  createVNode(unref(MinusTheTop), {
+                    theme: "outline",
+                    size: "14",
+                    class: "mr-2 cursor-pointer",
+                    onClick: setWindowIsTop
+                  })
+                ]),
+                _: 1
+              }, 8, ["content"]),
+              createVNode(_component_el_tooltip, { content: "缩小" }, {
+                default: withCtx(() => [
+                  createVNode(unref(ClickToFold), {
+                    theme: "outline",
+                    size: "14",
+                    class: "mr-2 cursor-pointer",
+                    onClick: toFold
+                  })
+                ]),
+                _: 1
+              }),
+              createVNode(_component_el_tooltip, { content: "关闭" }, {
+                default: withCtx(() => [
+                  createVNode(unref(Close), {
+                    theme: "outline",
+                    size: "14",
+                    class: "cursor-pointer",
+                    onClick: closeWin
+                  })
+                ]),
+                _: 1
+              })
+            ])
+          ], 4);
+        };
+      }
+    });
     const _hoisted_1$13 = { class: "flex flex-col justify-center items-center w-full h-full" };
     const _sfc_main$2j = /* @__PURE__ */ defineComponent({
       __name: "App",
@@ -10538,6 +10696,7 @@ var require_index_001 = __commonJS({
               createVNode(_component_RouterView, null, {
                 default: withCtx(({ Component }) => [
                   createBaseVNode("div", _hoisted_1$13, [
+                    createVNode(_sfc_main$2k),
                     (openBlock(), createBlock(resolveDynamicComponent(Component))),
                     createVNode(Footer$3)
                   ])
@@ -17221,7 +17380,7 @@ var require_index_001 = __commonJS({
       emits: alertEmits,
       setup(__props, { emit: emit2 }) {
         const props = __props;
-        const { Close } = TypeComponents;
+        const { Close: Close2 } = TypeComponents;
         const slots = useSlots();
         const ns = useNamespace("alert");
         const visible = ref(true);
@@ -17286,7 +17445,7 @@ var require_index_001 = __commonJS({
                       onClick: close2
                     }, {
                       default: withCtx(() => [
-                        createVNode(unref(Close))
+                        createVNode(unref(Close2))
                       ]),
                       _: 1
                     }, 8, ["class"]))
@@ -34303,7 +34462,7 @@ var require_index_001 = __commonJS({
       setup(__props) {
         const props = __props;
         const { t } = useLocale();
-        const { Close } = CloseComponents;
+        const { Close: Close2 } = CloseComponents;
         const { dialogRef, headerRef, bodyId, ns, style } = inject(dialogInjectionKey);
         const { focusTrapRef } = inject(FOCUS_TRAP_INJECTION_KEY);
         const dialogKls = computed(() => [
@@ -34347,7 +34506,7 @@ var require_index_001 = __commonJS({
                   class: normalizeClass(unref(ns).e("close"))
                 }, {
                   default: withCtx(() => [
-                    (openBlock(), createBlock(resolveDynamicComponent(_ctx.closeIcon || unref(Close))))
+                    (openBlock(), createBlock(resolveDynamicComponent(_ctx.closeIcon || unref(Close2))))
                   ]),
                   _: 1
                 }, 8, ["class"])
@@ -60140,7 +60299,7 @@ var require_index_001 = __commonJS({
       emits: messageEmits,
       setup(__props, { expose }) {
         const props = __props;
-        const { Close } = TypeComponents;
+        const { Close: Close2 } = TypeComponents;
         const { ns, zIndex: zIndex2 } = useGlobalComponentSettings("message");
         const { currentZIndex, nextZIndex } = zIndex2;
         const messageRef = ref();
@@ -60253,7 +60412,7 @@ var require_index_001 = __commonJS({
                   onClick: withModifiers(close2, ["stop"])
                 }, {
                   default: withCtx(() => [
-                    createVNode(unref(Close))
+                    createVNode(unref(Close2))
                   ]),
                   _: 1
                 }, 8, ["class", "onClick"])) : createCommentVNode("v-if", true)
@@ -61052,7 +61211,7 @@ var require_index_001 = __commonJS({
         const props = __props;
         const { ns, zIndex: zIndex2 } = useGlobalComponentSettings("notification");
         const { nextZIndex, currentZIndex } = zIndex2;
-        const { Close } = CloseComponents;
+        const { Close: Close2 } = CloseComponents;
         const visible = ref(false);
         let timer = void 0;
         const typeClass = computed(() => {
@@ -61160,7 +61319,7 @@ var require_index_001 = __commonJS({
                     onClick: withModifiers(close2, ["stop"])
                   }, {
                     default: withCtx(() => [
-                      createVNode(unref(Close))
+                      createVNode(unref(Close2))
                     ]),
                     _: 1
                   }, 8, ["class", "onClick"])) : createCommentVNode("v-if", true)
