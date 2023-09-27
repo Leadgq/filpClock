@@ -16,8 +16,15 @@
           @click="setWindowIsTop"
         />
       </el-tooltip>
-      <el-tooltip content="缩小">
-        <click-to-fold theme="outline" size="14" class="mr-2 cursor-pointer" @click="toFold" />
+      <el-tooltip content="缩小" :visible="windVisible">
+        <click-to-fold
+          theme="outline"
+          size="14"
+          class="mr-2 cursor-pointer"
+          @click="toFold"
+          @mouseenter="windVisible = true"
+          @mouseleave="windVisible = false"
+        />
       </el-tooltip>
       <el-tooltip content="关闭">
         <Close theme="outline" size="14" class="cursor-pointer" @click="closeWin" />
@@ -33,8 +40,10 @@ import { useConfigStore } from '@renderer/store/useConfigStore'
 const store = useConfigStore()
 const isWindowTop = ref(true)
 const isWindowText = ref('取消置顶')
-const toFold = () => {
-  window.api.toFoldWindow()
+const windVisible = ref(false)
+const toFold = async () => {
+  windVisible.value = false
+  setTimeout(() => window.api.toFoldWindow(), 100)
 }
 const closeWin = () => {
   window.api.closeWindow()
